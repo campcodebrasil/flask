@@ -30,6 +30,26 @@ def contato():
 
 
 
+@app.route('/contato/lista/')
+def contatoLista():
+
+    if request.method == 'GET':
+        pesquisa = request.args.get('pesquisa', '')
+
+    dados = Contato.query.order_by('nome')
+    if pesquisa != '':
+        dados = dados.filter_by(nome=pesquisa)
+
+    print(dados.all())
+    context = {'dados': dados.all()}
+
+    return render_template('contato_lista.html', context=context)
+
+
+
+
+
+
 # Formato Não Recomendado
 @app.route('/contato_old/', methods=['GET', 'POST'])
 def contato_old():
@@ -57,3 +77,6 @@ def contato_old():
 
 
     return render_template('contato_old.html', context=context)
+
+
+
