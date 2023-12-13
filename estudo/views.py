@@ -43,6 +43,7 @@ def contatoLista():
     print(dados.all())
     context = {'dados': dados.all()}
 
+    
     return render_template('contato_lista.html', context=context)
 
 

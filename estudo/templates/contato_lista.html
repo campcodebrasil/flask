@@ -33,24 +33,20 @@
                             </tr>
                         </thead>
                         <tbody>
+                            {% for linha in context['dados'] %}                            
                             <tr>
-                                <td>{{context['dados'][0].nome}}</td>                                
-                                <td>{{context['dados'][0].email}}</td>
-                                <td>{{context['dados'][0].assunto}}</td>
-                                <td>{{context['dados'][0].respondido}}</td>
+                                <td>{{linha.nome}}</td>                                
+                                <td>{{linha.email}}</td>
+                                <td>{{linha.assunto}}</td>
+                                <td>
+                                    {% if linha.respondido == 1 %}
+                                        Sim
+                                    {% else %}
+                                        Não
+                                    {% endif %}
+                                </td>
                             </tr>
-                            <tr>
-                                <td>{{context['dados'][1].nome}}</td>                                
-                                <td>{{context['dados'][1].email}}</td>
-                                <td>{{context['dados'][1].assunto}}</td>
-                                <td>{{context['dados'][1].respondido}}</td>
-                            </tr>
-                            <tr>
-                                <td>{{context['dados'][2].nome}}</td>                                
-                                <td>{{context['dados'][2].email}}</td>
-                                <td>{{context['dados'][2].assunto}}</td>
-                                <td>{{context['dados'][2].respondido}}</td>
-                            </tr>
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>
