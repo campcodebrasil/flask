@@ -12,6 +12,7 @@
         <p>Bem vindo {{context.usuario}} a aula de Flask!!!</p>
         <p><b>Idade:</b> {{context.idade}}</p>
 
+        <img src="{{ url_for('static', filename='img/Logo.png') }}">
         
     </div>
 {% endblock %}
