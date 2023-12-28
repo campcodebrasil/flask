@@ -1,0 +1,10 @@
+1. Configuração APP
+2. Criar Models de Usuário
+
+3. Criar Formulário de Cadastro de Usuário
+
+4. Criar View de Cadastro de Usuário
+
+5. Criar Formulário de Login
+6. Criar View para Login
+7. Criar View para Logout
