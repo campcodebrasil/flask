@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+    
+    <div class="container">  
+        
+        {% include 'nav.html' %}
+
+            <div class="row mt-4">
+                <h3>Lista de Posts</h3>                
+                
+                <div class="col-12">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Post</th>                                
+                                <th>Usuario</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for linha in posts %}                            
+                            <tr>
+                                <td>{{linha.msg_resumo()}}</td>                                
+                                <td>{{linha.user.nome}}</td>
+                                <td><a href="{{url_for('PostDetail', id=linha.id)}}">Detalhes</a></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            
+
+    </div>
+
+{% endblock %}
